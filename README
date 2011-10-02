@@ -1,0 +1,62 @@
+
+Follow these simple steps to use the samples:
+ 
+* Create a servlet folder in your webapps directory e.g.,
+
+  - appache-tomcat
+    - webapps
+      - MyGosuServlet
+
+* Add a WEB-INF folder under your new servlet directory:
+
+  - MyGosuServlet
+    - WEB-INF
+
+* Create a web.xml file supporting Gosu templates e.g.,
+
+  - MyGosuServlet
+    - WEB-INF
+      - web.xml
+
+  <?xml version="1.0" encoding="ISO-8859-1"?>
+  <web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+    version="2.4">
+  
+    <display-name>Gosu Servlet Examples</display-name>
+    <description>
+      Gosu Servlet Examples.
+    </description>
+  
+    <servlet>
+      <servlet-name>GosuServlet</servlet-name>
+      <servlet-class>gw.util.servlet.GosuServlet</servlet-class>     
+    </servlet>
+    <servlet-mapping>
+      <servlet-name>GosuServlet</servlet-name>
+      <url-pattern>*.gst</url-pattern>
+    </servlet-mapping>
+  </web-app>
+
+* Copy the "samples" directory from this project to your servlet directory e.g.,
+
+  - MyGosuServlet
+    - samples
+      - hello
+        - HelloWorld.gst
+      ...
+      
+* Copy the Gosu jars to the WEB-INF lib directory. e.g.,
+  
+  - MyGosuServlet
+    - WEB-INF
+      - lib
+        - gw-gosu-core.jar
+        ...
+        
+* Try a sample in your browser e.g.,
+ 
+   http://localhost:8080/MyGosuServlet/sample/hello/HelloWorld.gst
+   
+   
